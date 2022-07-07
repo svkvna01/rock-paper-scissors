@@ -1,6 +1,8 @@
 //starts game
 function game () {
-    playRound();
+    for (let i=0; i< 5; i++) {
+        playRound(i);
+    }
 }
 
 //Array of choices
