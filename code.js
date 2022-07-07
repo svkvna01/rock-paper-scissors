@@ -3,10 +3,21 @@ function game () {
     for (let i=0; i< 5; i++) {
         playRound(i);
     }
+    if(computerWins< playerWins) {
+        console.log ("You won! " + playerWins + " - " + computerWins);
+    }else if  (computerWins > playerWins) {
+        console.log ("You lost! " + playerWins + " - " + computerWins);
+    }else {
+        console.log ("It's a tie! " + playerWins + " - " + computerWins);
+    }
 }
 
 //Array of choices
 const choices = ['rock', 'paper', 'scissors'];
+
+//Wins counter
+let playerWins = 0;
+let computerWins = 0;
 
 // random computer play
 function computerPlay () {
@@ -49,24 +60,30 @@ function playRound () {
     }else if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
             console.log("You win! Rock beats Scissors!");
+            ++playerWins;
         } else {
             console.log("You lose! Paper beats Rock!");
+            ++computerWins;
         }
     
     // Paper beats Rock
     }else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
             console.log("You win! Paper beats Rock!");
+            ++playerWins;
         } else {
             console.log( "You lose! Scissors beats Paper!");
+            ++computerWins;
         }
     
     // Scissors beat Paper
     }else if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
             console.log("You win! Scissors beats Paper!");
+            ++playerWins;
         } else {
             console.log("You lose! Rock beats Scissors!");
+            ++computerWins;
  
         }
     }
