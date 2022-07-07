@@ -20,14 +20,7 @@ function playerChoice() {
     input = input.toLowerCase();
     let check = validInput(input);
     while (check == false) {
-      input = prompt(
-        "Type Rock, Paper, or Scissors. Spelling needs to be exact, but capitilization doesnt matter"
-      );
-      while (input == null) {
-        input = prompt("Type Rock, Paper, or Scissors");
-      }
-      input = input.toLowerCase();
-      check = validInput(input);
+      input = prompt("Type Rock, Paper, or Scissors. Spelling needs to be exact, but capitilization doesnt matter");
     }
     return input;
 }
